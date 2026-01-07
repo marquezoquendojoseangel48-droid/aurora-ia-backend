@@ -83,7 +83,7 @@ if ($peritaje) {
 }
 
 // 🚀 LLAMADA A CEREBRAS (¡URL CORREGIDA!)
-$apiKey = 'csk-j4encynj35m52xk3x34cc2mhmk63t8pct2cnfx8j24rfyvm5';
+$apiKey = $_ENV['CEREBRAS_API_KEY'] ?? 'csk-j4encynj35m52xk3x34cc2mhmk63t8pct2cnfx8j24rfyvm5';
 $payload = [
     'model' => 'llama3.1-8b',
     'messages' => [
@@ -140,4 +140,5 @@ $errorMsg = match($httpCode) {
 };
 
 ob_end_clean();
+
 echo json_encode(['reply' => $errorMsg], JSON_UNESCAPED_UNICODE);
