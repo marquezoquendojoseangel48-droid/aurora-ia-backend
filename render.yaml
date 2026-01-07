@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: aurora-ia-backend
+    env: php
+    buildCommand: ""
+    startCommand: ""
+    envVars:
+      - key: PHP_VERSION
+        value: "8.2"
